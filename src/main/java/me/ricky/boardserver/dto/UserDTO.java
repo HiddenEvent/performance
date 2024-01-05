@@ -11,33 +11,15 @@ import java.util.Date;
 @ToString
 public class UserDTO {
     public enum Status {
-        DEFAULT, ADMIN, DELETED
+        DEFAULT, DELETED, ADMIN
     }
     private int id;
-    private String userId;
+    private String userID;
     private String password;
-    private String nickName;
+    private String nickname;
     private boolean isAdmin;
-    private Date createTime;
-    private boolean isWithDraw;
+    private Date createdAt;
+    private boolean iswWithDraw;
     private Status status;
-    private Date updateTime;
-
-    public UserDTO(){
-    }
-
-    public UserDTO(String id, String password, String name, String phone, String address, Status status, Date createTime, Date updateTime, boolean isAdmin) {
-        this.userId = id;
-        this.password = password;
-        this.nickName = name;
-        this.status = status;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-        this.isAdmin = isAdmin;
-    }
-
-    public static boolean hasNullDataBeforeSignup(UserDTO userDTO) {
-        return userDTO.getUserId() == null || userDTO.getPassword() == null
-                || userDTO.getNickName() == null;
-    }
+    private Date updatedAt;
 }
